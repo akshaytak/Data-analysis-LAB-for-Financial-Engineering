@@ -1,0 +1,138 @@
+---
+title: "R Notebook"
+output:
+  pdf_document: default
+  html_notebook: default
+---
+
+This is an [R Markdown](http://rmarkdown.rstudio.com) Notebook. When you execute code within the notebook, the results appear beneath the code.
+
+Try executing this chunk by clicking the *Run* button within the chunk or by placing your cursor inside it and pressing *Ctrl+Shift+Enter*.
+
+```{r}
+dat = read.csv("D:/R LAB DAFE/datasets/Stock_Bond.csv")
+attach(dat)
+par(mfcol = c(2, 1))
+plot(GM_AC, type = "l")
+plot(F_AC, type = "l")
+
+```
+
+```{r}
+plot(F_AC, type = "l")
+```
+
+```{r}
+n = dim(dat)[1]
+GMReturn = GM_AC[-1] / GM_AC[-n] - 1
+FReturn = F_AC[-1] / F_AC[-n] - 1
+par(mfrow = c(1, 1))
+plot(GMReturn,FReturn)
+```
+
+computing the log returns for GM and plotting the returns versus the log returns
+
+```{r}
+GMLogreturn = log(GM_AC[-1]/GM_AC[-n])
+plot(GMReturn, GMLogreturn)
+
+```
+
+```{r}
+cor(GMReturn, GMLogreturn)
+```
+
+Repeat Problem 1 with Microsoft (MSFT) and Merck (MRK)
+
+```{r}
+MSFTreturn = MSFT_AC[-1]/MSFT_AC[-n] -1
+MRKreturn = MRK_AC[-1]/MRK_AC[-n] -1
+plot(MSFTreturn, MRKreturn)
+```
+
+# 
+
+SIMULATIONS
+
+```{r}
+niter = 1e5 # number of iterations
+below = rep(0, niter) # set up storage
+set.seed(2009)
+for (i in 1:niter)
+{
+r = rnorm(45, mean = 0.05/253, sd = 0.23/sqrt(253)) # generate random numbers
+logPrice = log(1e6) + cumsum(r)
+minlogP = min(logPrice) # minimum price over next 45 days
+below[i] = as.numeric(minlogP < log(950000))
+}
+mean(below)
+
+```
+
+On line 10, below[i] equals one if, for the ith simulation, the minimum price over 45 days is less than 950,000. Therefore, on line 12, mean(below) is the proportion of simulations where the minimum price is less than 950,000.
+
+```{r}
+set.seed(2012)
+n = 253
+par(mfrow=c(3,3))
+for (i in (1:9))
+{
+logr = rnorm(n, 0.05 / 253, 0.2 / sqrt(253))
+price = c(120, 120 * exp(cumsum(logr)))
+plot(price, type = "b")
+}
+```
+
+```{r}
+data= read.csv("D:/R LAB DAFE/datasets/MCD_PriceDaily.csv")
+attach(data)
+head(data)
+adjPrice = data[, 7]
+```
+
+Compute the returns and log returns and plot them against each other. As discussed in Sect. 2.1.3, does it seem reasonable that the two types of daily returns are approximately equal?
+
+```{r}
+len = dim(data)[1]
+return_MCD = Adj.Close[-1]/Adj.Close[-len] -1
+Lreturn_MCD = log(Adj.Close[-1]/Adj.Close[-len])
+plot(return_MCD, Lreturn_MCD, type = "b")
+```
+
+Compute the mean and standard deviation for both the returns and the log returns. Comment on the similarities and differences you perceive in the first two moments of each random variable. Does it seem reasonable that they are the same?
+
+```{r}
+mean(return_MCD)
+sd(return_MCD)
+mean(Lreturn_MCD)
+sd(Lreturn_MCD)
+```
+
+```{r}
+t.test(return_MCD, Lreturn_MCD, paired=TRUE)
+```
+
+Assume that McDonald's log returns are normally distributed with mean and standard deviation equal to their estimates and that you have been made the following proposition by a friend: If at any point within the next 20 trading days, the price of McDonald's falls below 85 dollars, you will be paid \$100, but if it does not, you have to pay him \$1. The current price of McDonald's is at the end of the sample data, \$93.07. Are you willing to make the bet? (Use 10,000 iterations in your simulation and use the command set.seed(2015) to ensure your results are the same as the answer key)
+
+```{r}
+set.seed(2015)
+n = 1e4
+c = rep(0, n)
+for(i in (1:n)){
+  LR = rnorm(20, mean = mean(Lreturn_MCD), sd = sd(Lreturn_MCD))
+  pr = 93.07*exp(cumsum(LR))
+  if(min(pr) < 85){
+    c[i] = 100
+  }
+  else{
+    c[i] = -1
+  }
+}
+mean(c)
+```
+
+Add a new chunk by clicking the *Insert Chunk* button on the toolbar or by pressing *Ctrl+Alt+I*.
+
+When you save the notebook, an HTML file containing the code and output will be saved alongside it (click the *Preview* button or press *Ctrl+Shift+K* to preview the HTML file).
+
+The preview shows you a rendered HTML copy of the contents of the editor. Consequently, unlike *Knit*, *Preview* does not run any R code chunks. Instead, the output of the chunk when it was last run in the editor is displayed.

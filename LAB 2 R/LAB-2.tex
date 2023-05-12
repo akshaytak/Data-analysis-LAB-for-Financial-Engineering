@@ -1,0 +1,392 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+%
+\documentclass[
+]{article}
+\usepackage{amsmath,amssymb}
+\usepackage{lmodern}
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math}
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\usepackage{xcolor}
+\usepackage[margin=1in]{geometry}
+\usepackage{color}
+\usepackage{fancyvrb}
+\newcommand{\VerbBar}{|}
+\newcommand{\VERB}{\Verb[commandchars=\\\{\}]}
+\DefineVerbatimEnvironment{Highlighting}{Verbatim}{commandchars=\\\{\}}
+% Add ',fontsize=\small' for more characters per line
+\usepackage{framed}
+\definecolor{shadecolor}{RGB}{248,248,248}
+\newenvironment{Shaded}{\begin{snugshade}}{\end{snugshade}}
+\newcommand{\AlertTok}[1]{\textcolor[rgb]{0.94,0.16,0.16}{#1}}
+\newcommand{\AnnotationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\AttributeTok}[1]{\textcolor[rgb]{0.77,0.63,0.00}{#1}}
+\newcommand{\BaseNTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\BuiltInTok}[1]{#1}
+\newcommand{\CharTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\CommentTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
+\newcommand{\CommentVarTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\ConstantTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\ControlFlowTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
+\newcommand{\DataTypeTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{#1}}
+\newcommand{\DecValTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\DocumentationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\ErrorTok}[1]{\textcolor[rgb]{0.64,0.00,0.00}{\textbf{#1}}}
+\newcommand{\ExtensionTok}[1]{#1}
+\newcommand{\FloatTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\FunctionTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\ImportTok}[1]{#1}
+\newcommand{\InformationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\KeywordTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
+\newcommand{\NormalTok}[1]{#1}
+\newcommand{\OperatorTok}[1]{\textcolor[rgb]{0.81,0.36,0.00}{\textbf{#1}}}
+\newcommand{\OtherTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{#1}}
+\newcommand{\PreprocessorTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
+\newcommand{\RegionMarkerTok}[1]{#1}
+\newcommand{\SpecialCharTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\SpecialStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\StringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\VariableTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\VerbatimStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\WarningTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\usepackage{graphicx}
+\makeatletter
+\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
+\def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
+\makeatother
+% Scale images if necessary, so that they will not overflow the page
+% margins by default, and it is still possible to overwrite the defaults
+% using explicit options in \includegraphics[width, height, ...]{}
+\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
+% Set default figure placement to htbp
+\makeatletter
+\def\fps@figure{htbp}
+\makeatother
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{-\maxdimen} % remove section numbering
+\ifLuaTeX
+  \usepackage{selnolig}  % disable illegal ligatures
+\fi
+\IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\urlstyle{same} % disable monospaced font for URLs
+\hypersetup{
+  pdftitle={R Notebook},
+  hidelinks,
+  pdfcreator={LaTeX via pandoc}}
+
+\title{R Notebook}
+\author{}
+\date{\vspace{-2.5em}}
+
+\begin{document}
+\maketitle
+
+This is an \href{http://rmarkdown.rstudio.com}{R Markdown} Notebook.
+When you execute code within the notebook, the results appear beneath
+the code.
+
+Try executing this chunk by clicking the \emph{Run} button within the
+chunk or by placing your cursor inside it and pressing
+\emph{Ctrl+Shift+Enter}.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{dat }\OtherTok{=} \FunctionTok{read.csv}\NormalTok{(}\StringTok{"D:/R LAB DAFE/datasets/Stock\_Bond.csv"}\NormalTok{)}
+\FunctionTok{attach}\NormalTok{(dat)}
+\FunctionTok{par}\NormalTok{(}\AttributeTok{mfcol =} \FunctionTok{c}\NormalTok{(}\DecValTok{2}\NormalTok{, }\DecValTok{1}\NormalTok{))}
+\FunctionTok{plot}\NormalTok{(GM\_AC, }\AttributeTok{type =} \StringTok{"l"}\NormalTok{)}
+\FunctionTok{plot}\NormalTok{(F\_AC, }\AttributeTok{type =} \StringTok{"l"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{LAB-2_files/figure-latex/unnamed-chunk-1-1.pdf}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{plot}\NormalTok{(F\_AC, }\AttributeTok{type =} \StringTok{"l"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{LAB-2_files/figure-latex/unnamed-chunk-2-1.pdf}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{n }\OtherTok{=} \FunctionTok{dim}\NormalTok{(dat)[}\DecValTok{1}\NormalTok{]}
+\NormalTok{GMReturn }\OtherTok{=}\NormalTok{ GM\_AC[}\SpecialCharTok{{-}}\DecValTok{1}\NormalTok{] }\SpecialCharTok{/}\NormalTok{ GM\_AC[}\SpecialCharTok{{-}}\NormalTok{n] }\SpecialCharTok{{-}} \DecValTok{1}
+\NormalTok{FReturn }\OtherTok{=}\NormalTok{ F\_AC[}\SpecialCharTok{{-}}\DecValTok{1}\NormalTok{] }\SpecialCharTok{/}\NormalTok{ F\_AC[}\SpecialCharTok{{-}}\NormalTok{n] }\SpecialCharTok{{-}} \DecValTok{1}
+\FunctionTok{par}\NormalTok{(}\AttributeTok{mfrow =} \FunctionTok{c}\NormalTok{(}\DecValTok{1}\NormalTok{, }\DecValTok{1}\NormalTok{))}
+\FunctionTok{plot}\NormalTok{(GMReturn,FReturn)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{LAB-2_files/figure-latex/unnamed-chunk-3-1.pdf}
+
+computing the log returns for GM and plotting the returns versus the log
+returns
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{GMLogreturn }\OtherTok{=} \FunctionTok{log}\NormalTok{(GM\_AC[}\SpecialCharTok{{-}}\DecValTok{1}\NormalTok{]}\SpecialCharTok{/}\NormalTok{GM\_AC[}\SpecialCharTok{{-}}\NormalTok{n])}
+\FunctionTok{plot}\NormalTok{(GMReturn, GMLogreturn)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{LAB-2_files/figure-latex/unnamed-chunk-4-1.pdf}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{cor}\NormalTok{(GMReturn, GMLogreturn)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 0.9995408
+\end{verbatim}
+
+Repeat Problem 1 with Microsoft (MSFT) and Merck (MRK)
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{MSFTreturn }\OtherTok{=}\NormalTok{ MSFT\_AC[}\SpecialCharTok{{-}}\DecValTok{1}\NormalTok{]}\SpecialCharTok{/}\NormalTok{MSFT\_AC[}\SpecialCharTok{{-}}\NormalTok{n] }\SpecialCharTok{{-}}\DecValTok{1}
+\NormalTok{MRKreturn }\OtherTok{=}\NormalTok{ MRK\_AC[}\SpecialCharTok{{-}}\DecValTok{1}\NormalTok{]}\SpecialCharTok{/}\NormalTok{MRK\_AC[}\SpecialCharTok{{-}}\NormalTok{n] }\SpecialCharTok{{-}}\DecValTok{1}
+\FunctionTok{plot}\NormalTok{(MSFTreturn, MRKreturn)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{LAB-2_files/figure-latex/unnamed-chunk-6-1.pdf}
+
+\hypertarget{section}{%
+\section{}\label{section}}
+
+SIMULATIONS
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{niter }\OtherTok{=} \FloatTok{1e5} \CommentTok{\# number of iterations}
+\NormalTok{below }\OtherTok{=} \FunctionTok{rep}\NormalTok{(}\DecValTok{0}\NormalTok{, niter) }\CommentTok{\# set up storage}
+\FunctionTok{set.seed}\NormalTok{(}\DecValTok{2009}\NormalTok{)}
+\ControlFlowTok{for}\NormalTok{ (i }\ControlFlowTok{in} \DecValTok{1}\SpecialCharTok{:}\NormalTok{niter)}
+\NormalTok{\{}
+\NormalTok{r }\OtherTok{=} \FunctionTok{rnorm}\NormalTok{(}\DecValTok{45}\NormalTok{, }\AttributeTok{mean =} \FloatTok{0.05}\SpecialCharTok{/}\DecValTok{253}\NormalTok{, }\AttributeTok{sd =} \FloatTok{0.23}\SpecialCharTok{/}\FunctionTok{sqrt}\NormalTok{(}\DecValTok{253}\NormalTok{)) }\CommentTok{\# generate random numbers}
+\NormalTok{logPrice }\OtherTok{=} \FunctionTok{log}\NormalTok{(}\FloatTok{1e6}\NormalTok{) }\SpecialCharTok{+} \FunctionTok{cumsum}\NormalTok{(r)}
+\NormalTok{minlogP }\OtherTok{=} \FunctionTok{min}\NormalTok{(logPrice) }\CommentTok{\# minimum price over next 45 days}
+\NormalTok{below[i] }\OtherTok{=} \FunctionTok{as.numeric}\NormalTok{(minlogP }\SpecialCharTok{\textless{}} \FunctionTok{log}\NormalTok{(}\DecValTok{950000}\NormalTok{))}
+\NormalTok{\}}
+\FunctionTok{mean}\NormalTok{(below)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 0.50988
+\end{verbatim}
+
+On line 10, below{[}i{]} equals one if, for the ith simulation, the
+minimum price over 45 days is less than 950,000. Therefore, on line 12,
+mean(below) is the proportion of simulations where the minimum price is
+less than 950,000.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{set.seed}\NormalTok{(}\DecValTok{2012}\NormalTok{)}
+\NormalTok{n }\OtherTok{=} \DecValTok{253}
+\FunctionTok{par}\NormalTok{(}\AttributeTok{mfrow=}\FunctionTok{c}\NormalTok{(}\DecValTok{3}\NormalTok{,}\DecValTok{3}\NormalTok{))}
+\ControlFlowTok{for}\NormalTok{ (i }\ControlFlowTok{in}\NormalTok{ (}\DecValTok{1}\SpecialCharTok{:}\DecValTok{9}\NormalTok{))}
+\NormalTok{\{}
+\NormalTok{logr }\OtherTok{=} \FunctionTok{rnorm}\NormalTok{(n, }\FloatTok{0.05} \SpecialCharTok{/} \DecValTok{253}\NormalTok{, }\FloatTok{0.2} \SpecialCharTok{/} \FunctionTok{sqrt}\NormalTok{(}\DecValTok{253}\NormalTok{))}
+\NormalTok{price }\OtherTok{=} \FunctionTok{c}\NormalTok{(}\DecValTok{120}\NormalTok{, }\DecValTok{120} \SpecialCharTok{*} \FunctionTok{exp}\NormalTok{(}\FunctionTok{cumsum}\NormalTok{(logr)))}
+\FunctionTok{plot}\NormalTok{(price, }\AttributeTok{type =} \StringTok{"b"}\NormalTok{)}
+\NormalTok{\}}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{LAB-2_files/figure-latex/unnamed-chunk-8-1.pdf}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{data}\OtherTok{=} \FunctionTok{read.csv}\NormalTok{(}\StringTok{"D:/R LAB DAFE/datasets/MCD\_PriceDaily.csv"}\NormalTok{)}
+\FunctionTok{attach}\NormalTok{(data)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## The following object is masked from dat:
+## 
+##     Date
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{head}\NormalTok{(data)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##        Date  Open  High   Low Close   Volume Adj.Close
+## 1  1/4/2010 62.63 63.07 62.31 62.78  5839300     53.99
+## 2  1/5/2010 62.66 62.75 62.19 62.30  7099000     53.58
+## 3  1/6/2010 62.20 62.41 61.06 61.45 10551300     52.85
+## 4  1/7/2010 61.25 62.34 61.11 61.90  7517700     53.24
+## 5  1/8/2010 62.27 62.41 61.60 61.84  6107300     53.19
+## 6 1/11/2010 62.02 62.43 61.85 62.32  6081300     53.60
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{adjPrice }\OtherTok{=}\NormalTok{ data[, }\DecValTok{7}\NormalTok{]}
+\end{Highlighting}
+\end{Shaded}
+
+Compute the returns and log returns and plot them against each other. As
+discussed in Sect. 2.1.3, does it seem reasonable that the two types of
+daily returns are approximately equal?
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{len }\OtherTok{=} \FunctionTok{dim}\NormalTok{(data)[}\DecValTok{1}\NormalTok{]}
+\NormalTok{return\_MCD }\OtherTok{=}\NormalTok{ Adj.Close[}\SpecialCharTok{{-}}\DecValTok{1}\NormalTok{]}\SpecialCharTok{/}\NormalTok{Adj.Close[}\SpecialCharTok{{-}}\NormalTok{len] }\SpecialCharTok{{-}}\DecValTok{1}
+\NormalTok{Lreturn\_MCD }\OtherTok{=} \FunctionTok{log}\NormalTok{(Adj.Close[}\SpecialCharTok{{-}}\DecValTok{1}\NormalTok{]}\SpecialCharTok{/}\NormalTok{Adj.Close[}\SpecialCharTok{{-}}\NormalTok{len])}
+\FunctionTok{plot}\NormalTok{(return\_MCD, Lreturn\_MCD, }\AttributeTok{type =} \StringTok{"b"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{LAB-2_files/figure-latex/unnamed-chunk-10-1.pdf}
+
+Compute the mean and standard deviation for both the returns and the log
+returns. Comment on the similarities and differences you perceive in the
+first two moments of each random variable. Does it seem reasonable that
+they are the same?
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{mean}\NormalTok{(return\_MCD)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 0.0005027479
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{sd}\NormalTok{(return\_MCD)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 0.008900319
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{mean}\NormalTok{(Lreturn\_MCD)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 0.0004630553
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{sd}\NormalTok{(Lreturn\_MCD)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 0.008901467
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{t.test}\NormalTok{(return\_MCD, Lreturn\_MCD, }\AttributeTok{paired=}\ConstantTok{TRUE}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## 
+##  Paired t-test
+## 
+## data:  return_MCD and Lreturn_MCD
+## t = 15.866, df = 1175, p-value < 2.2e-16
+## alternative hypothesis: true mean difference is not equal to 0
+## 95 percent confidence interval:
+##  3.478409e-05 4.460108e-05
+## sample estimates:
+## mean difference 
+##    3.969258e-05
+\end{verbatim}
+
+Assume that McDonald's log returns are normally distributed with mean
+and standard deviation equal to their estimates and that you have been
+made the following proposition by a friend: If at any point within the
+next 20 trading days, the price of McDonald's falls below 85 dollars,
+you will be paid \$100, but if it does not, you have to pay him \$1. The
+current price of McDonald's is at the end of the sample data, \$93.07.
+Are you willing to make the bet? (Use 10,000 iterations in your
+simulation and use the command set.seed(2015) to ensure your results are
+the same as the answer key)
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{set.seed}\NormalTok{(}\DecValTok{2015}\NormalTok{)}
+\NormalTok{n }\OtherTok{=} \FloatTok{1e4}
+\NormalTok{c }\OtherTok{=} \FunctionTok{rep}\NormalTok{(}\DecValTok{0}\NormalTok{, n)}
+\ControlFlowTok{for}\NormalTok{(i }\ControlFlowTok{in}\NormalTok{ (}\DecValTok{1}\SpecialCharTok{:}\NormalTok{n))\{}
+\NormalTok{  LR }\OtherTok{=} \FunctionTok{rnorm}\NormalTok{(}\DecValTok{20}\NormalTok{, }\AttributeTok{mean =} \FunctionTok{mean}\NormalTok{(Lreturn\_MCD), }\AttributeTok{sd =} \FunctionTok{sd}\NormalTok{(Lreturn\_MCD))}
+\NormalTok{  pr }\OtherTok{=} \FloatTok{93.07}\SpecialCharTok{*}\FunctionTok{exp}\NormalTok{(}\FunctionTok{cumsum}\NormalTok{(LR))}
+  \ControlFlowTok{if}\NormalTok{(}\FunctionTok{min}\NormalTok{(pr) }\SpecialCharTok{\textless{}} \DecValTok{85}\NormalTok{)\{}
+\NormalTok{    c[i] }\OtherTok{=} \DecValTok{100}
+\NormalTok{  \}}
+  \ControlFlowTok{else}\NormalTok{\{}
+\NormalTok{    c[i] }\OtherTok{=} \SpecialCharTok{{-}}\DecValTok{1}
+\NormalTok{  \}}
+\NormalTok{\}}
+\FunctionTok{mean}\NormalTok{(c)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 0.0605
+\end{verbatim}
+
+Add a new chunk by clicking the \emph{Insert Chunk} button on the
+toolbar or by pressing \emph{Ctrl+Alt+I}.
+
+When you save the notebook, an HTML file containing the code and output
+will be saved alongside it (click the \emph{Preview} button or press
+\emph{Ctrl+Shift+K} to preview the HTML file).
+
+The preview shows you a rendered HTML copy of the contents of the
+editor. Consequently, unlike \emph{Knit}, \emph{Preview} does not run
+any R code chunks. Instead, the output of the chunk when it was last run
+in the editor is displayed.
+
+\end{document}
